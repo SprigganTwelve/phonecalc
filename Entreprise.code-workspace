@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "../../Entreprise"
+		},
+		{
+			"path": "../calculator"
+		},
+		{
+			"path": "../../../xampp/htdocs/cours_PHP"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Entreprise"
+	}
+}
