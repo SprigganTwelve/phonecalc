@@ -1,6 +1,6 @@
 # phonecalc
 
-phonecalc est un projet qui a pour but la réalisation d'une calculatrice web utilisable et fonctionnel.
+phonecalc est un projet qui a pour but la réalisation d'une calculatrice web et mobile utilisable et fonctionnel.
 
 ## Stack technique 
 
@@ -9,10 +9,14 @@ Plusieurs langages sont utilisées dans ce projet.
  - [x] HTML
 - [x] CSS
 - [x] JavaScript
+- [x] -Flutter
 
 
-## Ouvrir Color picker ?
+## Ouvrir Phone_Calc
 
-Tout ce que vous avez à faire est d'entrée l'url du fichier index.html dans votre navigateur.
-Découvrez les différentes possibilités offertes par notre application et  passez un bon moment.
-Nous vous souhaitons une bonne visite ! :)
+Ce projet est divisé est deux catégorie la partie web et la partie mobile (pour android).
+selon le repertoire selectionné une méthode de lancement différente vous sera donné d'exécuter !
+
+## Le projet Web
+...........
+## Le projet Logiciel
