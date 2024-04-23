@@ -18,7 +18,7 @@ class Composeur extends StatelessWidget {
               height: 250,
               child: const Text('00'),
             ),
-            Row(
+            const Row(
               children: [
                 _RightBord(),
                 _leftBord(),
