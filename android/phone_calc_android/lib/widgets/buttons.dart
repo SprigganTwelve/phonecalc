@@ -10,8 +10,8 @@ class CreateButton extends StatelessWidget {
   final Color backgroundColor;
   CreateButton(
       {required this.text,
-      required this.textColor,
-      required this.backgroundColor});
+      this.textColor = Colors.white,
+      this.backgroundColor = const Color(0xFFB1CDE1)});
 
   @override
   Widget build(BuildContext context) {
@@ -47,113 +47,43 @@ class ToLeft extends StatelessWidget {
           children: [
             CreateButton(
               text: "e",
-              backgroundColor: const Color(0xFFB1CDE1),
-              textColor: Colors.white,
             ),
-            CreateButton(
-              text: "µ",
-              backgroundColor: const Color(0xFFB1CDE1),
-              textColor: Colors.white,
-            ),
-            CreateButton(
-              text: "sin",
-              backgroundColor: const Color(0xFFB1CDE1),
-              textColor: Colors.white,
-            ),
+            CreateButton(text: "µ"),
+            CreateButton(text: "sin"),
           ],
         ),
         Row(
           children: [
-            CreateButton(
-              text: "Ac",
-              backgroundColor: const Color(0xFFB1CDE1),
-              textColor: Colors.white,
-            ),
-            CreateButton(
-              text: "⌫",
-              backgroundColor: const Color(0xFFB1CDE1),
-              textColor: Colors.white,
-            ),
-            CreateButton(
-              text: "/",
-              backgroundColor: const Color(0xFFB1CDE1),
-              textColor: Colors.white,
-            ),
+            CreateButton(text: "Ac"),
+            CreateButton(text: "⌫"),
+            CreateButton(text: "/"),
           ],
         ),
         Row(
           children: [
-            CreateButton(
-              text: "7",
-              backgroundColor: const Color(0xFFB1CDE1),
-              textColor: Colors.white,
-            ),
-            CreateButton(
-              text: "8",
-              backgroundColor: const Color(0xFFB1CDE1),
-              textColor: Colors.white,
-            ),
-            CreateButton(
-              text: "9",
-              backgroundColor: const Color(0xFFB1CDE1),
-              textColor: Colors.white,
-            ),
+            CreateButton(text: "7"),
+            CreateButton(text: "8"),
+            CreateButton(text: "9"),
           ],
         ),
         Row(
           children: [
-            CreateButton(
-              text: "4",
-              backgroundColor: const Color(0xFFB1CDE1),
-              textColor: Colors.white,
-            ),
-            CreateButton(
-              text: "5",
-              backgroundColor: const Color(0xFFB1CDE1),
-              textColor: Colors.white,
-            ),
-            CreateButton(
-              text: "6",
-              backgroundColor: const Color(0xFFB1CDE1),
-              textColor: Colors.white,
-            ),
+            CreateButton(text: "4"),
+            CreateButton(text: "5"),
+            CreateButton(text: "6"),
           ],
         ),
         Row(
           children: [
-            CreateButton(
-              text: "1",
-              backgroundColor: const Color(0xFFB1CDE1),
-              textColor: Colors.white,
-            ),
-            CreateButton(
-              text: "2",
-              backgroundColor: const Color(0xFFB1CDE1),
-              textColor: Colors.white,
-            ),
-            CreateButton(
-              text: "3",
-              backgroundColor: const Color(0xFFB1CDE1),
-              textColor: Colors.white,
-            ),
+            CreateButton(text: "1"),
+            CreateButton(text: "2"),
+            CreateButton(text: "3"),
           ],
         ),
         Row(
           children: [
-            SizedBox(
-                width: 205,
-                child: CreateButton(
-                  text: "0",
-                  backgroundColor: const Color(0xFFB1CDE1),
-                  textColor: Colors.white,
-                )),
-            SizedBox(
-                width: 100,
-                child: CreateButton(
-                  text: ".",
-                  backgroundColor: const Color(0xFFB1CDE1),
-                  textColor: Colors.white,
-                )),
+            SizedBox(width: 205, child: CreateButton(text: "0")),
+            SizedBox(width: 100, child: CreateButton(text: ".")),
           ],
         ),
       ],
@@ -170,30 +100,10 @@ class ToRight extends StatelessWidget {
   Widget buttonLeftBox() {
     return Column(
       children: [
-        CreateButton(
-          text: "deg",
-          backgroundColor: const Color(0xFFB1CDE1),
-          textColor: Colors.white,
-        ),
-        CreateButton(
-          text: "*",
-          backgroundColor: const Color(0xFFB1CDE1),
-          textColor: Colors.white,
-        ),
-        SizedBox(
-            height: 150,
-            child: CreateButton(
-              text: "+",
-              backgroundColor: const Color(0xFFB1CDE1),
-              textColor: Colors.white,
-            )),
-        Expanded(
-            flex: 1,
-            child: CreateButton(
-              text: "=",
-              backgroundColor: const Color(0xFFB1CDE1),
-              textColor: Colors.white,
-            )),
+        CreateButton(text: "deg"),
+        CreateButton(text: "*"),
+        SizedBox(height: 150, child: CreateButton(text: "+")),
+        Expanded(flex: 1, child: CreateButton(text: "=")),
       ],
     );
   }
