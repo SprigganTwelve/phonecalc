@@ -34,6 +34,7 @@ class CreateButton extends StatelessWidget {
           alignment: Alignment.center,
           backgroundColor: MaterialStateProperty.all(backgroundColor),
         ),
+        clipBehavior: Clip.none,
         child: Text(text, style: TextStyle(color: textColor, fontSize: 30)),
       ),
     );
@@ -127,7 +128,7 @@ class ToRight extends StatelessWidget {
           flex: 1,
           child: CreateButton(
             text: "=",
-            backgroundColor: Color.fromARGB(255, 28, 135, 222),
+            backgroundColor: const Color.fromARGB(255, 28, 135, 222),
           ),
         ),
       ],
