@@ -10,8 +10,8 @@ class CreateButton extends StatelessWidget {
   final Color backgroundColor;
   CreateButton(
       {required this.text,
-      this.textColor = Colors.white,
-      this.backgroundColor = const Color(0xFFB1CDE1)});
+      this.textColor = const Color.fromARGB(255, 245, 247, 250),
+      this.backgroundColor = const Color.fromRGBO(201, 231, 253, 1.0)});
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +54,9 @@ class ToLeft extends StatelessWidget {
         ),
         Row(
           children: [
-            CreateButton(text: "Ac"),
+            CreateButton(
+              text: "Ac",
+            ),
             CreateButton(text: "⌫"),
             CreateButton(text: "/"),
           ],
