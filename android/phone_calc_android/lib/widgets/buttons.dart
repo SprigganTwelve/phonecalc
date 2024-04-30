@@ -10,10 +10,12 @@ class CreateButton extends StatelessWidget {
   final Size size;
   final double borderRadius;
   final Color backgroundColor;
+  final Function handlePress;
   CreateButton(
       {required this.text,
       this.size = const Size(90, 90),
       this.borderRadius = 15,
+      this.handlePress = getValue,
       this.textColor = const Color.fromARGB(255, 245, 247, 250),
       this.backgroundColor = const Color.fromRGBO(201, 231, 253, 1.0)});
 
@@ -22,7 +24,7 @@ class CreateButton extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(7),
       child: TextButton(
-        onPressed: () => {},
+        onPressed: handlePress(),
         style: ButtonStyle(
           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(
@@ -132,3 +134,7 @@ class ToRight extends StatelessWidget {
     );
   }
 }
+
+/*------------function--------*/
+
+void getValue() {}
