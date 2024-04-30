@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
             children: [
               /* display of Calcul */
               Container(
-                  height: 400,
+                  height: 320,
                   width: double.infinity,
                   margin: const EdgeInsets.only(left: 20, right: 20),
                   child: const Column(
@@ -45,7 +45,7 @@ class MyApp extends StatelessWidget {
               /*---------Button-----------*/
               Expanded(
                 child: Container(
-                  margin: const EdgeInsets.only(left: 20, right: 20),
+                  margin: const EdgeInsets.only(left: 10, right: 10),
                   color: const Color.fromARGB(255, 40, 40, 38),
                   child: Expanded(
                     flex: 1,

@@ -1,4 +1,17 @@
+import 'dart:ui';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+
+class CreateButton extends StatelessWidget {
+  const CreateButton({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
+  }
+}
 
 class ToLeft extends StatelessWidget {
   @override
@@ -7,18 +20,21 @@ class ToLeft extends StatelessWidget {
   }
 
   Widget _createButton(String text) {
-    return TextButton(
-      onPressed: () => {},
-      style: ButtonStyle(
-        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-          RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
+    return Padding(
+      padding: const EdgeInsets.all(7),
+      child: TextButton(
+        onPressed: () => {},
+        style: ButtonStyle(
+          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+          ),
+          fixedSize: MaterialStateProperty.all(const Size(90, 90)),
+          alignment: Alignment.center,
+          backgroundColor: MaterialStateProperty.all(const Color(0xFFB1CDE1)),
         ),
-        fixedSize: MaterialStateProperty.all(const Size(90, 90)),
-        alignment: Alignment.center,
-        backgroundColor: MaterialStateProperty.all(const Color(0xFFB1CDE1)),
+        child: Text(text,
+            style: const TextStyle(color: Colors.white, fontSize: 30)),
       ),
-      child:
-          Text(text, style: const TextStyle(color: Colors.white, fontSize: 30)),
     );
   }
 
@@ -28,7 +44,7 @@ class ToLeft extends StatelessWidget {
         Row(
           children: [
             _createButton("e"),
-            _createButton("u"),
+            _createButton("µ"),
             _createButton("sin"),
           ],
         ),
@@ -62,8 +78,8 @@ class ToLeft extends StatelessWidget {
         ),
         Row(
           children: [
-            _createButton("0"),
-            _createButton("."),
+            SizedBox(width: 205, child: _createButton("0")),
+            SizedBox(width: 100, child: _createButton(".")),
           ],
         ),
       ],
@@ -78,18 +94,21 @@ class ToRight extends StatelessWidget {
   }
 
   Widget _createButton(String text) {
-    return TextButton(
-      onPressed: () => {},
-      style: ButtonStyle(
-        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-          RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+    return Padding(
+      padding: const EdgeInsets.all(7),
+      child: TextButton(
+        onPressed: () => {},
+        style: ButtonStyle(
+          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+          ),
+          fixedSize: MaterialStateProperty.all(const Size(90, 90)),
+          alignment: Alignment.center,
+          backgroundColor: MaterialStateProperty.all(const Color(0xFFBAD7EC)),
         ),
-        fixedSize: MaterialStateProperty.all(const Size(90, 90)),
-        alignment: Alignment.center,
-        backgroundColor: MaterialStateProperty.all(const Color(0xFFBAD7EC)),
+        child: Text(text,
+            style: const TextStyle(color: Colors.white, fontSize: 30)),
       ),
-      child:
-          Text(text, style: const TextStyle(color: Colors.white, fontSize: 30)),
     );
   }
 
@@ -98,8 +117,8 @@ class ToRight extends StatelessWidget {
       children: [
         _createButton("deg"),
         _createButton("*"),
-        _createButton("+"),
-        _createButton("="),
+        SizedBox(height: 150, child: _createButton("+")),
+        Expanded(flex: 1, child: _createButton("=")),
       ],
     );
   }
