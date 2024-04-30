@@ -26,7 +26,13 @@ class MyApp extends StatelessWidget {
                     end: Alignment.bottomRight,
                     colors: [
                   Color(0xFFEFF5FB),
-                  Color.fromRGBO(121, 190, 237, 1.0)
+                  Color.fromRGBO(121, 190, 237, 1.0),
+                  Color.fromRGBO(67, 136, 185, 1.0)
+                ],
+                    stops: [
+                  0,
+                  0.5,
+                  1.0
                 ])),
             child: Column(
               children: [

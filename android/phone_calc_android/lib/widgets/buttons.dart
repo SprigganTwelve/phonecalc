@@ -7,9 +7,13 @@ import 'package:flutter/widgets.dart';
 class CreateButton extends StatelessWidget {
   final String text;
   final Color textColor;
+  final Size size;
+  final double borderRadius;
   final Color backgroundColor;
   CreateButton(
       {required this.text,
+      this.size = const Size(90, 90),
+      this.borderRadius = 15,
       this.textColor = const Color.fromARGB(255, 245, 247, 250),
       this.backgroundColor = const Color.fromRGBO(201, 231, 253, 1.0)});
 
@@ -21,9 +25,10 @@ class CreateButton extends StatelessWidget {
         onPressed: () => {},
         style: ButtonStyle(
           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-            RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+            RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(borderRadius)),
           ),
-          fixedSize: MaterialStateProperty.all(const Size(90, 90)),
+          fixedSize: MaterialStateProperty.all(size),
           alignment: Alignment.center,
           backgroundColor: MaterialStateProperty.all(backgroundColor),
         ),
@@ -58,7 +63,9 @@ class ToLeft extends StatelessWidget {
               text: "Ac",
             ),
             CreateButton(text: "⌫"),
-            CreateButton(text: "/"),
+            CreateButton(
+                text: "/",
+                backgroundColor: const Color.fromARGB(255, 119, 189, 247)),
           ],
         ),
         Row(
@@ -103,9 +110,24 @@ class ToRight extends StatelessWidget {
     return Column(
       children: [
         CreateButton(text: "deg"),
-        CreateButton(text: "*"),
-        SizedBox(height: 150, child: CreateButton(text: "+")),
-        Expanded(flex: 1, child: CreateButton(text: "=")),
+        CreateButton(
+          text: "*",
+          backgroundColor: const Color.fromARGB(255, 119, 189, 247),
+        ),
+        SizedBox(
+          height: 150,
+          child: CreateButton(
+            text: "+",
+            backgroundColor: const Color.fromARGB(255, 119, 189, 247),
+          ),
+        ),
+        Expanded(
+          flex: 1,
+          child: CreateButton(
+            text: "=",
+            backgroundColor: Color.fromARGB(255, 28, 135, 222),
+          ),
+        ),
       ],
     );
   }
