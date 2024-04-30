@@ -47,7 +47,7 @@ class MyApp extends StatelessWidget {
                       children: [
                         Text(
                           "536 + 3536",
-                          style: TextStyle(fontSize: 40, color: Colors.white),
+                          style: TextStyle(fontSize: 30, color: Colors.white),
                         ),
                         Text(
                           "= ....",
