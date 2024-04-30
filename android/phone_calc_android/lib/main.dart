@@ -1,109 +1,65 @@
+import 'dart:ui';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:flutter/widgets.dart';
+import 'package:phone_calc_android/widgets/buttons.dart';
 
 void main() {
-  runApp(const Composeur());
+  runApp(const MyApp());
 }
 
-class Composeur extends StatelessWidget {
-  const Composeur({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: Column(
-          children: [
-            Container(
-              color: Colors.black.withOpacity(0.6),
-              height: 250,
-              child: const Text('00'),
-            ),
-            const Row(
-              children: [
-                _RightBord(),
-                _leftBord(),
-              ],
-            )
-          ],
-        ),
-      ),
+          backgroundColor: const Color(0xFFB6D8F1),
+          body: Column(
+            children: [
+              /* display of Calcul */
+              Container(
+                  height: 400,
+                  width: double.infinity,
+                  margin: const EdgeInsets.only(left: 20, right: 20),
+                  child: const Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Text(
+                        "536 + 3536",
+                        style: TextStyle(fontSize: 40, color: Colors.white),
+                      ),
+                      Text(
+                        "= ....",
+                        style: TextStyle(fontSize: 50, color: Colors.white),
+                      )
+                    ],
+                  )),
+
+              /*--------------------*/
+              /*---------Button-----------*/
+              Expanded(
+                child: Container(
+                  margin: const EdgeInsets.only(left: 20, right: 20),
+                  color: const Color.fromARGB(255, 40, 40, 38),
+                  child: Expanded(
+                    flex: 1,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [ToLeft(), ToRight()],
+                    ),
+                  ),
+                ),
+              )
+            ],
+          )),
     );
   }
 }
 
-class _RightBord extends StatelessWidget {
-  const _RightBord({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Column(
-      children: [
-        Row(
-          children: [
-            ElevatedButton(onPressed: enterNumber, child: Text('e')),
-            ElevatedButton(onPressed: enterNumber, child: Text('u')),
-            ElevatedButton(onPressed: enterNumber, child: Text('sin'))
-          ],
-        ),
-        Row(
-          children: [
-            ElevatedButton(onPressed: enterNumber, child: Text('Ac')),
-            ElevatedButton(onPressed: enterNumber, child: Text('⌫')),
-            ElevatedButton(onPressed: enterNumber, child: Text('/'))
-          ],
-        ),
-        Row(
-          children: [
-            ElevatedButton(onPressed: enterNumber, child: Text('7')),
-            ElevatedButton(onPressed: enterNumber, child: Text('8')),
-            ElevatedButton(onPressed: enterNumber, child: Text('9'))
-          ],
-        ),
-        Row(
-          children: [
-            ElevatedButton(onPressed: enterNumber, child: Text('4')),
-            ElevatedButton(onPressed: enterNumber, child: Text('5')),
-            ElevatedButton(onPressed: enterNumber, child: Text('6'))
-          ],
-        ),
-        Row(
-          children: [
-            ElevatedButton(onPressed: enterNumber, child: Text('1')),
-            ElevatedButton(onPressed: enterNumber, child: Text('2')),
-            ElevatedButton(onPressed: enterNumber, child: Text('3'))
-          ],
-        ),
-        Row(
-          children: [
-            Expanded(
-              child: ElevatedButton(onPressed: enterNumber, child: Text('0')),
-            ),
-            ElevatedButton(onPressed: enterNumber, child: Text('.')),
-          ],
-        ),
-      ],
-    );
-  }
-}
-
-class _leftBord extends StatelessWidget {
-  const _leftBord({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Column(
-      children: [
-        ElevatedButton(onPressed: enterNumber, child: Text('deg')),
-        ElevatedButton(onPressed: enterNumber, child: Text('*')),
-        Expanded(
-          child: ElevatedButton(onPressed: enterNumber, child: Text('+')),
-        ),
-        Expanded(
-          child: ElevatedButton(onPressed: enterNumber, child: Text('=')),
-        )
-      ],
-    );
-  }
-}
-
-void enterNumber() {}
+/*---------General structure-----------*/
