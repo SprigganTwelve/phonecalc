@@ -82,31 +82,26 @@ class _MyAppState extends State<MyApp> {
                 /*--------------------*/
                 /*---------Button-----------*/
                 Expanded(
-                  child: Container(
-                    margin: const EdgeInsets.only(left: 10, right: 10),
-                    child: Expanded(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          ToLeft(
-                            //pass previewValue
-                            insertButtonValue: (value) => {
-                              setState(() {
-                                HandleCalcul(value);
-                              })
-                            },
-                          ),
-                          //pass previewValue
-                          ToRight(
-                            insertButtonValue: (value) => {
-                              setState(() {
-                                HandleCalcul(value);
-                              })
-                            },
-                          )
-                        ],
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      ToLeft(
+                        //pass previewValue
+                        insertButtonValue: (value) => {
+                          setState(() {
+                            HandleCalcul(value);
+                          })
+                        },
                       ),
-                    ),
+                      //pass previewValue
+                      ToRight(
+                        insertButtonValue: (value) => {
+                          setState(() {
+                            HandleCalcul(value);
+                          })
+                        },
+                      )
+                    ],
                   ),
                 )
               ],
