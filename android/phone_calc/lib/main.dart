@@ -62,7 +62,7 @@ class _MyAppState extends State<MyApp> {
                     end: Alignment.bottomRight,
                     colors: [
                   Color(0xFFEFF5FB),
-                  Color.fromRGBO(121, 190, 237, 1.0),
+                  Color.fromRGBO(109, 201, 255, 1),
                   Color.fromRGBO(67, 136, 185, 1.0)
                 ],
                     stops: [
