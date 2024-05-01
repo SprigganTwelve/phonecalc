@@ -10,8 +10,23 @@ void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  String previewCal = '';
+  String followCalc = '';
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    previewCal = '0';
+    followCalc = '= 0 ';
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -41,16 +56,16 @@ class MyApp extends StatelessWidget {
                     height: 320,
                     width: double.infinity,
                     margin: const EdgeInsets.only(left: 20, right: 20),
-                    child: const Column(
+                    child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
                         Text(
-                          "536 + 3536",
+                          previewCal,
                           style: TextStyle(fontSize: 30, color: Colors.white),
                         ),
                         Text(
-                          "= ....",
+                          followCalc,
                           style: TextStyle(fontSize: 50, color: Colors.white),
                         )
                       ],

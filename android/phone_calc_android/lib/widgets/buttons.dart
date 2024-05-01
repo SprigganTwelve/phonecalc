@@ -4,6 +4,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
+/*----------- Button format ----------*/
+
 class CreateButton extends StatelessWidget {
   final String text;
   final Color textColor;
@@ -24,7 +26,7 @@ class CreateButton extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(7),
       child: TextButton(
-        onPressed: handlePress(),
+        onPressed: () => {handlePress(text)},
         style: ButtonStyle(
           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(
@@ -38,9 +40,10 @@ class CreateButton extends StatelessWidget {
         child: Text(text, style: TextStyle(color: textColor, fontSize: 30)),
       ),
     );
-    ;
   }
 }
+
+/*-----------to LEFT Button ----------*/
 
 class ToLeft extends StatelessWidget {
   @override
@@ -103,6 +106,10 @@ class ToLeft extends StatelessWidget {
   }
 }
 
+/*---------------------*/
+
+/*-----------to Right ----------*/
+
 class ToRight extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -135,7 +142,8 @@ class ToRight extends StatelessWidget {
     );
   }
 }
+/*---------------------*/
 
 /*------------function--------*/
 
-void getValue() {}
+getValue() {}
