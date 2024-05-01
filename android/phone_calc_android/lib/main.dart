@@ -28,6 +28,12 @@ class _MyAppState extends State<MyApp> {
     followCalc = '= 0 ';
   }
 
+  changeState(newData) {
+    setState(() {
+      previewCal = newData;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
