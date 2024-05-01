@@ -1,3 +1,4 @@
+import 'package:expressions/expressions.dart';
 import 'package:flutter/material.dart';
 import 'package:phone_calc/widgets/buttons.dart';
 
@@ -16,14 +17,28 @@ class _MyAppState extends State<MyApp> {
   String previewCal = '';
   String followCalc = '';
   String lastPreviewValue = '';
+
+  /*-------dealing with calculs---------*/
   void HandleCalcul(value) {
     if (value == "⌫") {
+      int endPoint = lastPreviewValue.length - 1;
+      lastPreviewValue = lastPreviewValue.substring(0, endPoint);
+      previewCal = lastPreviewValue;
     } else if (value == "Ac") {
+      lastPreviewValue = '0';
+      previewCal = lastPreviewValue;
+      followCalc = "= 0 ";
+    } else if (value == "=") {
+      Expression exp = Expression.parse(previewCal);
+      const evalutor = ExpressionEvaluator();
+      var result = evalutor.eval(exp, {});
+      followCalc = "= $result";
     } else {
       lastPreviewValue = lastPreviewValue + value;
       previewCal = lastPreviewValue;
     }
   }
+  /*----------------*/
 
   @override
   void initState() {
