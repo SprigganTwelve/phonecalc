@@ -22,7 +22,8 @@ class _MyAppState extends State<MyApp> {
   String previewCal = '';
   String followCalc = '';
   String lastPreviewValue = '';
-  void HandleCalcul(value) {
+  // ignore: non_constant_identifier_names
+  HandleCalcul(value) {
     if (value == "⌫") {
     } else if (value == "Ac") {
     } else if (value) {
