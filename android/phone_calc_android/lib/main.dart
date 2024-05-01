@@ -27,6 +27,7 @@ class _MyAppState extends State<MyApp> {
     super.initState();
     previewCal = '0';
     followCalc = '= 0 ';
+    lastPreviewValue = '';
   }
 
   @override
@@ -80,7 +81,6 @@ class _MyAppState extends State<MyApp> {
                   child: Container(
                     margin: const EdgeInsets.only(left: 10, right: 10),
                     child: Expanded(
-                      flex: 1,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -88,8 +88,8 @@ class _MyAppState extends State<MyApp> {
                             //pass previewValue
                             insertButtonValue: (value) => {
                               setState(() {
-                                previewCal = lastPreviewValue;
                                 lastPreviewValue = lastPreviewValue + value;
+                                previewCal = lastPreviewValue;
                               })
                             },
                           ),
