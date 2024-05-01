@@ -20,18 +20,13 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   String previewCal = '';
   String followCalc = '';
+  String lastPreviewValue = '';
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     previewCal = '0';
     followCalc = '= 0 ';
-  }
-
-  changeState(newData) {
-    setState(() {
-      previewCal = newData;
-    });
   }
 
   @override
@@ -68,11 +63,13 @@ class _MyAppState extends State<MyApp> {
                       children: [
                         Text(
                           previewCal,
-                          style: TextStyle(fontSize: 30, color: Colors.white),
+                          style: const TextStyle(
+                              fontSize: 30, color: Colors.white),
                         ),
                         Text(
                           followCalc,
-                          style: TextStyle(fontSize: 50, color: Colors.white),
+                          style: const TextStyle(
+                              fontSize: 50, color: Colors.white),
                         )
                       ],
                     )),
@@ -86,7 +83,25 @@ class _MyAppState extends State<MyApp> {
                       flex: 1,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: [ToLeft(), ToRight()],
+                        children: [
+                          ToLeft(
+                            //pass previewValue
+                            insertButtonValue: (value) => {
+                              setState(() {
+                                previewCal = lastPreviewValue;
+                                lastPreviewValue = lastPreviewValue + value;
+                              })
+                            },
+                          ),
+                          //pass previewValue
+                          ToRight(
+                            insertButtonValue: (value) => {
+                              setState(() {
+                                previewCal = value;
+                              })
+                            },
+                          )
+                        ],
                       ),
                     ),
                   ),
