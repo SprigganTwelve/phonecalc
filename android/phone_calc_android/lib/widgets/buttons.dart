@@ -32,16 +32,7 @@ class CreateButton extends StatelessWidget {
         /*------Handle---Button--------*/
 
         onPressed: () => {
-          if (text == '=')
-            {
-              //add text
-            }
-          else if (text == "⌫")
-            {}
-          else if (text == "Ac")
-            {}
-          else
-            {setButtonValue(text)}
+          {setButtonValue(text)}
         },
 
         /*---------style- of--button--------*/

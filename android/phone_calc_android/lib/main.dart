@@ -1,3 +1,4 @@
+import 'dart:ffi';
 import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
@@ -21,6 +22,16 @@ class _MyAppState extends State<MyApp> {
   String previewCal = '';
   String followCalc = '';
   String lastPreviewValue = '';
+  void HandleCalcul(value) {
+    if (value == "⌫") {
+    } else if (value == "Ac") {
+    } else if (value) {
+    } else {
+      lastPreviewValue = lastPreviewValue + value;
+      previewCal = lastPreviewValue;
+    }
+  }
+
   @override
   void initState() {
     // TODO: implement initState
@@ -88,8 +99,7 @@ class _MyAppState extends State<MyApp> {
                             //pass previewValue
                             insertButtonValue: (value) => {
                               setState(() {
-                                lastPreviewValue = lastPreviewValue + value;
-                                previewCal = lastPreviewValue;
+                                HandleCalcul(value);
                               })
                             },
                           ),
@@ -97,7 +107,7 @@ class _MyAppState extends State<MyApp> {
                           ToRight(
                             insertButtonValue: (value) => {
                               setState(() {
-                                previewCal = value;
+                                HandleCalcul(value);
                               })
                             },
                           )
